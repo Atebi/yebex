@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import React, { useRef, useEffect, useState } from "react";
 
@@ -59,146 +60,144 @@ const NavBar = () => {
   // };
 
   return (
-    
-      <nav
-        ref={navRef}
-        className={`${
-          isScrollingDown ? "-translate-y-full transform" : "translate-y-0"
-        } fixed left-0 right-0 top-0 z-50 border-gray-200 bg-white dark:bg-gray-900`}
-      >
-        <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
-          <a
-            href="/"
-            className="flex items-center space-x-3 rtl:space-x-reverse"
-          >
-            <Image
-              src="/yebox.svg"
-              alt="yebex logo"
-              width={0}
-              height={0}
-              className="h-8 w-auto"
-            />
-            {/* <img
+    <nav
+      ref={navRef}
+      className={`${
+        isScrollingDown ? "-translate-y-full transform" : "translate-y-0"
+      } fixed left-0 right-0 top-0 z-50 border-gray-200 bg-white dark:bg-gray-900`}
+    >
+      <div className="mx-auto flex max-w-screen-2xl flex-wrap items-center justify-between px-6 py-4 lg:px-32">
+        <Link
+          href="/"
+          className="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <Image
+            src="/yebox.svg"
+            alt="yebex logo"
+            width={0}
+            height={0}
+            className="h-8 w-auto"
+          />
+          {/* <img
          src="https://flowbite.com/docs/images/logo.svg"
          className="h-8"
          alt="Flowbite Logo"
        /> */}
-            {/* <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
+          {/* <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
          Flowbite
        </span> */}
-          </a>
+        </Link>
 
-          <button
-            ref={btnRef}
-            onClick={handleClick}
-            className="flex flex-col items-center justify-center md:hidden"
-          >
-            {/* <span
+        <button
+          ref={btnRef}
+          onClick={handleClick}
+          className="flex flex-col items-center justify-center md:hidden"
+        >
+          {/* <span
          className={`block h-0.5 w-6 rounded-sm bg-gray-500 
                  transition-all duration-300 ease-out ${isOpen ? "translate-y-1 rotate-45" : "-translate-y-0.5"}`}
        ></span> */}
-            <span
-              className={`block h-[3.8px] w-5 rounded-sm bg-gray-500 
+          <span
+            className={`block h-[3.8px] w-5 rounded-sm bg-gray-500 
                  transition-all duration-300 ease-out ${
                    isOpen ? "translate-y-1 rotate-45" : "-translate-y-0.5"
                  }`}
-            ></span>
-            <span
-              className={`my-0.5 block h-[3.8px] w-5 rounded-sm 
+          ></span>
+          <span
+            className={`my-0.5 block h-[3.8px] w-5 rounded-sm 
                  bg-gray-500 transition-all duration-300 ease-out ${
                    isOpen ? "opacity-0" : "opacity-100"
                  }`}
-            ></span>
-            <span
-              className={`block h-[3.8px] w-5 rounded-sm bg-gray-500 
+          ></span>
+          <span
+            className={`block h-[3.8px] w-5 rounded-sm bg-gray-500 
                  transition-all duration-300 ease-out ${
                    isOpen ? "-translate-y-1 -rotate-45" : "translate-y-0.5"
                  }`}
-            ></span>
-          </button>
-          <div
-            className={`${isOpen ? "block" : "hidden"} w-full md:block md:w-auto`}
-            id="navbar-default"
-          >
-            <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse dark:border-gray-700 dark:bg-gray-800 md:dark:bg-gray-900">
-              <li>
-                <a
-                  href="/"
-                  className={`${
-                    currentPath === "/"
-                      ? "bg-lime-500 text-white md:text-lime-500"
-                      : ""
-                  } block rounded px-3 py-2 hover:text-lime-500 hover:opacity-80 md:bg-transparent md:p-0`}
-                  // aria-current="page"
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/contact"
-                  className={`${
-                    currentPath === "/contact"
-                      ? "bg-lime-500 text-white md:text-lime-500"
-                      : ""
-                  } block rounded px-3 py-2 hover:text-lime-500 hover:opacity-80 md:bg-transparent md:p-0`}
-                >
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/team"
-                  className={`${
-                    currentPath === "/team"
-                      ? "bg-lime-500 text-white md:text-lime-500"
-                      : ""
-                  } block rounded px-3 py-2 hover:text-lime-500 hover:opacity-80 md:bg-transparent md:p-0`}
-                >
-                  Team
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/ourServices"
-                  className={`${
-                    currentPath === "/ourServices"
-                      ? "bg-lime-500 text-white md:text-lime-500"
-                      : ""
-                  } block rounded px-3 py-2 hover:text-lime-500 hover:opacity-80 md:bg-transparent md:p-0`}
-                >
-                  Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/career"
-                  className={`${
-                    currentPath === "/career"
-                      ? "bg-lime-500 text-white md:text-lime-500"
-                      : ""
-                  } block rounded px-3 py-2 hover:text-lime-500 hover:opacity-80 md:bg-transparent md:p-0`}
-                >
-                  Career
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/blog"
-                  className={`${
-                    currentPath === "/blog"
-                      ? "bg-lime-500 text-white md:text-lime-500"
-                      : ""
-                  } block rounded px-3 py-2 hover:text-lime-500 hover:opacity-80 md:bg-transparent md:p-0`}
-                >
-                  Blog
-                </a>
-              </li>
-            </ul>
-          </div>
+          ></span>
+        </button>
+        <div
+          className={`${isOpen ? "block" : "hidden"} w-full md:block md:w-auto`}
+          id="navbar-default"
+        >
+          <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse dark:border-gray-700 dark:bg-gray-800 md:dark:bg-gray-900">
+            <li>
+              <a
+                href="/"
+                className={`${
+                  currentPath === "/"
+                    ? "bg-lime-500 text-white md:text-lime-500"
+                    : ""
+                } block rounded px-3 py-2 hover:text-lime-500 hover:opacity-80 md:bg-transparent md:p-0`}
+                // aria-current="page"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="/contact"
+                className={`${
+                  currentPath === "/contact"
+                    ? "bg-lime-500 text-white md:text-lime-500"
+                    : ""
+                } block rounded px-3 py-2 hover:text-lime-500 hover:opacity-80 md:bg-transparent md:p-0`}
+              >
+                Contact Us
+              </a>
+            </li>
+            <li>
+              <a
+                href="/team"
+                className={`${
+                  currentPath === "/team"
+                    ? "bg-lime-500 text-white md:text-lime-500"
+                    : ""
+                } block rounded px-3 py-2 hover:text-lime-500 hover:opacity-80 md:bg-transparent md:p-0`}
+              >
+                Team
+              </a>
+            </li>
+            <li>
+              <a
+                href="/ourServices"
+                className={`${
+                  currentPath === "/ourServices"
+                    ? "bg-lime-500 text-white md:text-lime-500"
+                    : ""
+                } block rounded px-3 py-2 hover:text-lime-500 hover:opacity-80 md:bg-transparent md:p-0`}
+              >
+                Services
+              </a>
+            </li>
+            <li>
+              <a
+                href="/career"
+                className={`${
+                  currentPath === "/career"
+                    ? "bg-lime-500 text-white md:text-lime-500"
+                    : ""
+                } block rounded px-3 py-2 hover:text-lime-500 hover:opacity-80 md:bg-transparent md:p-0`}
+              >
+                Career
+              </a>
+            </li>
+            <li>
+              <a
+                href="/blog"
+                className={`${
+                  currentPath === "/blog"
+                    ? "bg-lime-500 text-white md:text-lime-500"
+                    : ""
+                } block rounded px-3 py-2 hover:text-lime-500 hover:opacity-80 md:bg-transparent md:p-0`}
+              >
+                Blog
+              </a>
+            </li>
+          </ul>
         </div>
-      </nav>
-    
+      </div>
+    </nav>
   );
 };
 

@@ -1,14 +1,19 @@
 //Home Page
 
 import Image from "next/image";
+import Link from "next/link";
+import HR from "./components/HR";
+import Button from "./components/Button";
+import Line from "./components/Line";
 
 export default function Home() {
   return (
-    <div>
-      <section className="mt-[72px]">
-        <div className="mx-auto grid max-w-screen-xl px-4 py-8 lg:grid-cols-12 lg:gap-8 lg:py-16 xl:gap-0">
-          <div className="mr-auto place-self-center lg:col-span-7">
-            <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">
+    <div className="mx-auto mt-36 max-w-screen-2xl px-6 text-white md:mt-40 lg:px-32 xl:mt-48">
+      {/* HERO */}
+      <section className="">
+        <div className="mx-auto grid max-w-full lg:grid-cols-12 lg:gap-8 xl:gap-0">
+          <div className="mr-auto place-self-center lg:col-span-9">
+            <h1 className="mb-6 max-w-2xl text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl">
               Build Products That Scale On Every Device
             </h1>
             <p className="mb-6 max-w-2xl font-light text-white md:text-lg lg:mb-8 lg:text-xl">
@@ -17,47 +22,17 @@ export default function Home() {
             </p>
 
             {/* Links */}
-            <div className="flex flex-wrap gap-3">
-              <a
-                href="#"
-                className="inline-flex items-center justify-center rounded-lg bg-lime-500 px-5 py-3 text-center text-base font-medium text-black hover:bg-lime-700 focus:ring-4 focus:ring-lime-300"
-              >
-                Let's Work
-                <svg
-                  className="-mr-1 ml-2 h-5 w-5 fill-black"
-                  // fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </a>
-              <a
-                href="#"
-                className="group inline-flex items-center justify-center rounded-lg border border-white px-5 py-3 text-center text-base font-medium text-white hover:bg-gray-100 hover:text-black focus:ring-4 focus:ring-gray-100"
-              >
-                Join Our Team
-                <svg
-                  className="-mr-1 ml-2 h-5 w-5 fill-white group-hover:fill-black"
-                  // fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </a>
+            <div className="flex flex-wrap gap-6">
+              <Link href="/contact">
+                <Button text="Let's Work" />
+              </Link>
+              <Link href="/career">
+                <Button mode="outline" text="Join Our Team" />
+              </Link>
             </div>
             {/*  */}
           </div>
-          <div className="lg:col-span-5 lg:mt-0 lg:flex">
+          <div className="lg:col-span-1 lg:mt-0 lg:flex">
             {/* <Image
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
               alt="mockup"
@@ -69,6 +44,168 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* HERO END */}
+
+      <HR />
+
+      {/* SERVICES */}
+      <section className="">
+        <div className="ml-auto max-w-xl text-right">
+          <span className="mb-6 inline-flex items-center justify-center text-base font-bold text-lime-500">
+            <Line />
+            WHAT WE ARE
+          </span>
+
+          <h2 className="mb-6 text-3xl font-bold md:text-4xl xl:text-5xl">
+            What Yebox can do
+          </h2>
+          <p className="text-xl opacity-85">
+            We've got everything you need to launch and grow your business
+          </p>
+        </div>
+
+        {/* services container */}
+        <div className="mt-24 grid grid-cols-1 gap-6 text-xl font-semibold md:grid-cols-2 xl:text-3xl">
+          {/*  */}
+          <div className="flex items-center gap-6 bg-gray-950 p-6 lg:gap-10 lg:px-10 lg:py-9">
+            <Image
+              src="/codeLP.svg"
+              alt="laptop image"
+              width={0}
+              height={0}
+              className="h-12 w-12 fill-lime-500 lg:h-16 lg:w-16"
+            />
+            <h3>Software Engineering And Architecture</h3>
+          </div>
+          {/*  */}
+          <div className="flex items-center gap-6 bg-gray-950 p-6 lg:gap-10 lg:px-10 lg:py-9">
+            <Image
+              src="/migrate.svg"
+              alt="Computer cloud image"
+              width={0}
+              height={0}
+              className="h-12 w-12 fill-lime-500 lg:h-16 lg:w-16"
+            />
+            <h3>Cloud Migration</h3>
+          </div>
+          {/*  */}
+          <div className="flex items-center gap-6 bg-gray-950 p-6 lg:gap-10 lg:px-10 lg:py-9">
+            <Image
+              src="/data.svg"
+              alt="computer data stack image"
+              width={0}
+              height={0}
+              className="h-12 w-12 fill-lime-500 lg:h-16 lg:w-16"
+            />
+            <h3>Data Engineering</h3>
+          </div>
+          {/*  */}
+          <div className="flex items-center gap-6 bg-gray-950 p-6 lg:gap-10 lg:px-10 lg:py-9">
+            <Image
+              src="/file.svg"
+              alt="file image"
+              width={0}
+              height={0}
+              className="h-12 w-12 fill-lime-500 lg:h-16 lg:w-16"
+            />
+            <h3>Testing as a Service</h3>
+          </div>
+        </div>
+      </section>
+      {/* SERVICES END */}
+
+      <HR />
+
+      {/* CULTURE */}
+      <section className="">
+        <div className="flex flex-col gap-16 lg:flex-row lg:gap-10">
+          <div className="max-w-xl">
+            <span className="mb-6 inline-flex items-center justify-center text-base font-bold text-lime-500">
+              <Line />
+              OUR WAY OF WORK
+            </span>
+
+            <h2 className="mb-6 text-3xl font-bold md:text-4xl xl:text-5xl">
+              Culture
+            </h2>
+            <p className="mb-6 text-xl opacity-85">
+              Our mission is to bring happiness to a billion people. We not only
+              develop products, but also the individuals, teams and the
+              environment. This is why we are very conscious of our people,
+              values and culture.
+            </p>
+            <Link href="/career">
+              <Button text="Careers" />
+            </Link>
+          </div>
+
+          <Image
+            src="/culture.webp"
+            alt="group of employees image"
+            width={0}
+            height={0}
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
+            sizes="100vw , (max-width: 896px) 45vw"
+            quality={100}
+            priority={true}
+            className="mx-auto w-full max-w-lg"
+          />
+        </div>
+      </section>
+      {/* CULTURE END */}
+
+      <HR />
+
+      {/* TECH STACK */}
+      <section className="">
+        <div className="">
+          <div className="mb-14 max-w-xl md:mb-24">
+            <span className="mb-6 inline-flex items-center justify-center text-base font-bold text-lime-500">
+              <Line /> EXPLORE OUR TECHNOLOGY
+            </span>
+
+            <h2 className="mb-6 text-3xl font-bold md:text-4xl xl:text-5xl">
+              Tech Stack
+            </h2>
+            <p className="text-xl opacity-85">
+              We've got everything you need to launch and grow your business
+            </p>
+          </div>
+
+          <Image
+            src="/techstack.webp"
+            alt="tech stack image"
+            width={0}
+            height={0}
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
+            sizes="100vw"
+            quality={100}
+            priority={true}
+            className="w-full"
+          />
+        </div>
+      </section>
+
+      <HR />
+
+      {/* CTA */}
+      <section className="mx-auto max-w-md text-center">
+        <h4 className="mb-3 text-3xl font-bold md:text-4xl">
+          Getting started is easy!
+        </h4>
+        <p className="mx-auto mb-8 max-w-64 text-xs md:text-base">
+          lorem upsumsnjhsd jjsdbjsdjksks jlbsjkskvjkkjbsfjkbknbkjbsf
+        </p>
+        <Button mode="outline" text="Get Started" />
+      </section>
+
+      <HR />
     </div>
   );
 }
