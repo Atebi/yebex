@@ -1,9 +1,18 @@
 import { Inter, Work_Sans } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
-// const work = Work_Sans({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+const work = Work_Sans({
+  subsets: ["latin"],
+  variable: "--font-work",
+  display: "swap",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -13,9 +22,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${work.variable}`}>
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );

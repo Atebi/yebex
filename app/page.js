@@ -8,7 +8,7 @@ import Line from "./components/Line";
 
 export default function Home() {
   return (
-    <div className="mx-auto mt-36 max-w-screen-2xl px-6 text-white md:mt-40 lg:px-32 xl:mt-48">
+    <div className="mx-auto max-w-screen-2xl px-6 pt-36 text-white md:pt-40 lg:px-32 xl:pt-48">
       {/* HERO */}
       <section className="">
         <div className="mx-auto grid max-w-full lg:grid-cols-12 lg:gap-8 xl:gap-0">
@@ -51,10 +51,10 @@ export default function Home() {
       {/* SERVICES */}
       <section className="">
         <div className="ml-auto max-w-xl text-right">
-          <span className="mb-6 inline-flex items-center justify-center text-base font-bold text-lime-500">
+          <h3 className="mb-6 inline-flex items-center justify-center text-base font-bold text-lime-500">
             <Line />
             WHAT WE ARE
-          </span>
+          </h3>
 
           <h2 className="mb-6 text-3xl font-bold md:text-4xl xl:text-5xl">
             What Yebox can do
@@ -67,7 +67,7 @@ export default function Home() {
         {/* services container */}
         <div className="mt-24 grid grid-cols-1 gap-6 text-xl font-semibold md:grid-cols-2 xl:text-3xl">
           {/*  */}
-          <div className="flex items-center gap-6 bg-gray-950 p-6 lg:gap-10 lg:px-10 lg:py-9">
+          <div className="flex items-center gap-6 bg-neutral-900 p-6 lg:gap-10 lg:px-10 lg:py-9">
             <Image
               src="/codeLP.svg"
               alt="laptop image"
@@ -78,7 +78,7 @@ export default function Home() {
             <h3>Software Engineering And Architecture</h3>
           </div>
           {/*  */}
-          <div className="flex items-center gap-6 bg-gray-950 p-6 lg:gap-10 lg:px-10 lg:py-9">
+          <div className="flex items-center gap-6 bg-neutral-900 p-6 lg:gap-10 lg:px-10 lg:py-9">
             <Image
               src="/migrate.svg"
               alt="Computer cloud image"
@@ -89,7 +89,7 @@ export default function Home() {
             <h3>Cloud Migration</h3>
           </div>
           {/*  */}
-          <div className="flex items-center gap-6 bg-gray-950 p-6 lg:gap-10 lg:px-10 lg:py-9">
+          <div className="flex items-center gap-6 bg-neutral-900 p-6 lg:gap-10 lg:px-10 lg:py-9">
             <Image
               src="/data.svg"
               alt="computer data stack image"
@@ -100,7 +100,7 @@ export default function Home() {
             <h3>Data Engineering</h3>
           </div>
           {/*  */}
-          <div className="flex items-center gap-6 bg-gray-950 p-6 lg:gap-10 lg:px-10 lg:py-9">
+          <div className="flex items-center gap-6 bg-neutral-900 p-6 lg:gap-10 lg:px-10 lg:py-9">
             <Image
               src="/file.svg"
               alt="file image"
@@ -118,12 +118,12 @@ export default function Home() {
 
       {/* CULTURE */}
       <section className="">
-        <div className="flex flex-col gap-16 lg:flex-row lg:gap-10">
+        <div className="flex flex-col gap-16 xl:flex-row xl:gap-10">
           <div className="max-w-xl">
-            <span className="mb-6 inline-flex items-center justify-center text-base font-bold text-lime-500">
+            <h3 className="mb-6 inline-flex items-center justify-center text-base font-bold text-lime-500">
               <Line />
               OUR WAY OF WORK
-            </span>
+            </h3>
 
             <h2 className="mb-6 text-3xl font-bold md:text-4xl xl:text-5xl">
               Culture
@@ -163,9 +163,9 @@ export default function Home() {
       <section className="">
         <div className="">
           <div className="mb-14 max-w-xl md:mb-24">
-            <span className="mb-6 inline-flex items-center justify-center text-base font-bold text-lime-500">
+            <h3 className="mb-6 inline-flex items-center justify-center text-base font-bold text-lime-500">
               <Line /> EXPLORE OUR TECHNOLOGY
-            </span>
+            </h3>
 
             <h2 className="mb-6 text-3xl font-bold md:text-4xl xl:text-5xl">
               Tech Stack
@@ -205,7 +205,7 @@ export default function Home() {
         <Button mode="outline" text="Get Started" />
       </section>
 
-      <HR />
+      {/* <HR /> */}
     </div>
   );
 }
