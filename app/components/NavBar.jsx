@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
-import React, { useRef, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 const NavBar = () => {
   const currentPath = usePathname();
@@ -71,13 +71,14 @@ const NavBar = () => {
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <Image
+          <h1 className="text-3xl font-bold text-lime-500">D'Tech</h1>
+          {/* <Image
             src="/yebox.svg"
             alt="yebex logo"
             width={0}
             height={0}
             className="h-8 w-auto"
-          />
+          /> */}
           {/* <img
          src="https://flowbite.com/docs/images/logo.svg"
          className="h-8"
@@ -126,8 +127,8 @@ const NavBar = () => {
                 href="/"
                 className={`${
                   currentPath === "/"
-                    ? "bg-lime-500 text-white md:text-lime-500"
-                    : ""
+                  ? "bg-lime-500 md:text-lime-500"
+                  : "text-white"
                 } block rounded px-3 py-2 hover:text-lime-500 hover:opacity-80 md:bg-transparent md:p-0`}
                 // aria-current="page"
               >
@@ -139,8 +140,8 @@ const NavBar = () => {
                 href="/contact"
                 className={`${
                   currentPath === "/contact"
-                    ? "bg-lime-500 text-white md:text-lime-500"
-                    : ""
+                    ? "bg-lime-500 md:text-lime-500"
+                    : "text-white"
                 } block rounded px-3 py-2 hover:text-lime-500 hover:opacity-80 md:bg-transparent md:p-0`}
               >
                 Contact Us
@@ -151,8 +152,8 @@ const NavBar = () => {
                 href="/team"
                 className={`${
                   currentPath === "/team"
-                    ? "bg-lime-500 text-white md:text-lime-500"
-                    : ""
+                  ? "bg-lime-500 md:text-lime-500"
+                  : "text-white"
                 } block rounded px-3 py-2 hover:text-lime-500 hover:opacity-80 md:bg-transparent md:p-0`}
               >
                 Team
@@ -163,8 +164,8 @@ const NavBar = () => {
                 href="/ourServices"
                 className={`${
                   currentPath === "/ourServices"
-                    ? "bg-lime-500 text-white md:text-lime-500"
-                    : ""
+                  ? "bg-lime-500 md:text-lime-500"
+                  : "text-white"
                 } block rounded px-3 py-2 hover:text-lime-500 hover:opacity-80 md:bg-transparent md:p-0`}
               >
                 Services
@@ -175,8 +176,8 @@ const NavBar = () => {
                 href="/career"
                 className={`${
                   currentPath === "/career"
-                    ? "bg-lime-500 text-white md:text-lime-500"
-                    : ""
+                  ? "bg-lime-500 md:text-lime-500"
+                  : "text-white"
                 } block rounded px-3 py-2 hover:text-lime-500 hover:opacity-80 md:bg-transparent md:p-0`}
               >
                 Career
@@ -187,8 +188,8 @@ const NavBar = () => {
                 href="/blog"
                 className={`${
                   currentPath === "/blog"
-                    ? "bg-lime-500 text-white md:text-lime-500"
-                    : ""
+                  ? "bg-lime-500 md:text-lime-500"
+                  : "text-white"
                 } block rounded px-3 py-2 hover:text-lime-500 hover:opacity-80 md:bg-transparent md:p-0`}
               >
                 Blog

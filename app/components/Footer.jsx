@@ -31,9 +31,9 @@ const Footer = () => {
                   width={20}
                   height={20}
                 />
-                yebox.io@gmail.com
+                d_tech@gmail.com
                 <br />
-                hello@yebox.io
+                hello@d_tech.com
               </li>
               <li className="mb-6 inline-flex items-center justify-center gap-6">
                 <Image
@@ -42,8 +42,8 @@ const Footer = () => {
                   width={32}
                   height={32}
                 />
-                +23481 1037 7770 <br />
-                +23470 3872 9995
+                +23481 1000 7777 <br />
+                +23470 0000 9999
               </li>
             </ul>
           </div>
@@ -89,13 +89,14 @@ const Footer = () => {
             {/* SOCIAL ICONS END */}
 
             <Link href="/" className="mt-16 flex items-center">
-              <Image
+            <h1 className="text-5xl font-bold text-lime-500">D'Tech</h1>
+              {/* <Image
                 src="/yebox.svg"
                 alt="Yebex Logo"
                 width={0}
                 height={0}
                 className="me-3 h-14 w-auto"
-              />
+              /> */}
               {/* <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
                 Flowbite
               </span> */}
@@ -109,7 +110,7 @@ const Footer = () => {
           <span className="text-lg text-gray-500 opacity-80 sm:text-center">
             © {currentYear}{" "}
             <Link href="/" className="hover:underline">
-              Yebox™
+              D'Tech™
             </Link>{" "}
             . All Rights Reserved.
           </span>

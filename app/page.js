@@ -57,7 +57,7 @@ export default function Home() {
           </h3>
 
           <h2 className="mb-6 text-3xl font-bold md:text-4xl xl:text-5xl">
-            What Yebox can do
+            What D'Tech can do
           </h2>
           <p className="text-xl opacity-85">
             We've got everything you need to launch and grow your business
@@ -139,20 +139,66 @@ export default function Home() {
             </Link>
           </div>
 
-          <Image
-            src="/culture.webp"
-            alt="group of employees image"
-            width={0}
-            height={0}
-            style={{
-              width: "100%",
-              height: "auto",
-            }}
-            sizes="100vw , (max-width: 896px) 45vw"
-            quality={100}
-            priority={true}
-            className="mx-auto w-full max-w-lg"
-          />
+          <div className="cl_img grid grid-rows-2 grid-flow-col auto-cols gap-7">
+            
+            <Image
+              src="/cl-1.jpeg"
+              alt="group of employees image"
+              width={0}
+              height={0}
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
+              sizes="100vw , (max-width: 896px) 45vw"
+              quality={100}
+              priority={true}
+              className="mx-auto w-full max-w-lg self-end"
+            />
+            <Image
+              src="/cl-4.jpeg"
+              alt="group of employees image"
+              width={0}
+              height={0}
+              style={{
+                width: "100%",
+                height: "auto",
+
+              }}
+              sizes="100vw , (max-width: 896px) 45vw"
+              quality={100}
+              priority={true}
+              className="mx-auto w-full max-w-lg self-start"
+            />
+            <Image
+              src="/cl-3.jpeg"
+              alt="group of employees image"
+              width={0}
+              height={0}
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
+              sizes="100vw , (max-width: 896px) 45vw"
+              quality={100}
+              priority={true}
+              className="mx-auto w-full max-w-lg self-end"
+            />
+            <Image
+              src="/cl-2.jpeg"
+              alt="group of employees image"
+              width={0}
+              height={0}
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
+              sizes="100vw , (max-width: 896px) 45vw"
+              quality={100}
+              priority={true}
+              className="mx-auto w-full max-w-lg self-start"
+            />
+          </div>
         </div>
       </section>
       {/* CULTURE END */}
