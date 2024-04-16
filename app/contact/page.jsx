@@ -1,7 +1,33 @@
+"use client";
+
 import React from "react";
 import Button from "../components/Button";
+import { CheckBox, Input, TextArea } from "../components/input";
+import { IoMdCheckmark } from "react-icons/io";
+import { useState, useEffect } from "react";
+
 
 const ContactPage = () => {
+  const [checkedItems, setCheckedItems] = useState([]);
+
+  const handleCheckmarkClick = (item) => {
+    if(checkedItems.includes(item)){
+     
+      setCheckedItems((prevCheckedItems) => {
+        return prevCheckedItems.filter(x=>x!==item);
+      });
+      
+    }else{
+      setCheckedItems((prevCheckedItems) => {
+        return [...prevCheckedItems, item];
+      });
+    }
+  };
+
+  useEffect(()=>{
+    console.log(checkedItems);
+  },[checkedItems])
+
   return (
     <div className="mt-[72px] grid grid-cols-2 gap-[8rem] px-44 py-8 text-white lg:py-16">
       <div className="mt-32">
@@ -20,64 +46,75 @@ const ContactPage = () => {
         <span className="text-3xl">Drop us a line</span>
         <form action="" className="mt-7">
           <div className="my-12">
-            <input
-              type="text"
-              id="first_name"
-              class="text-md block w-full rounded border border-gray-300 bg-transparent px-8 py-3.5 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:text-white dark:placeholder-gray-400"
-              placeholder="Name"
-              required
-            />
+            <Input
+              element={{
+                required: "required",
+                placeholder: "Name",
+                id: "first_name",
+                kind: "input",
+                type: "text",
+              }}
+            ></Input>
           </div>
           <div className="my-12">
-            <input
-              type="text"
-              id="first_name"
-              class="text-md block w-full rounded border border-gray-300 bg-transparent px-8 py-3.5 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:text-white dark:placeholder-gray-400"
-              placeholder="Email"
-              required
-            />
+            <Input
+              element={{
+                required: "required",
+                placeholder: "Email",
+                id: "email",
+                kind: "input",
+                type: "email",
+              }}
+            ></Input>
           </div>
           <div className="my-12">
-            <input
-              type="text"
-              id="first_name"
-              class="text-md block w-full rounded border border-gray-300 bg-transparent px-8 py-3.5 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:text-white dark:placeholder-gray-400"
-              placeholder="How did you hear about us?"
-              required
-            />
+            <Input
+              element={{
+                required: "required",
+                placeholder: "How did you hear about us",
+                id: "info",
+                kind: "input",
+                type: "text",
+              }}
+            ></Input>
             <p className="text-1xl my-12">
               What service do you need help with?
             </p>
 
             <div className="my-12 grid grid-cols-2 gap-2">
-              <div className="flex items-center gap-6 bg-gray-900 p-8">
-                <p className="border-spacing-3  border  border-lime-500 px-5 py-5"></p>
-                <p className="text-bold">Software Engineering & Architecture</p>
-              </div>
-              <div className="flex items-center gap-6 bg-gray-900 p-8">
-                <p className="border-spacing-3 border border-lime-500 px-5 py-5"></p>
-                <p className="text-bold">Cloud Migration</p>
-              </div>
-              <div className="flex items-center gap-6 bg-gray-900 p-8">
-                <p className="border-spacing-3 border border-lime-500 px-5 py-5"></p>
-                <p className="text-bold">Data Engineering</p>
-              </div>
-              <div className="flex items-center gap-6 bg-gray-900  p-8">
-                <p className="border-spacing-3 border border-lime-500 px-5 py-5"></p>
-                <p className="text-bold">Quality Assurance</p>
-              </div>
+              {[
+                "Software Engineering & Architecture",
+                "Cloud Migration",
+                "Data Engineering",
+                "Quality Assurance",
+              ].map((item) => (
+                <CheckBox
+                  onClick={() => handleCheckmarkClick(item)}
+                  key={item}
+                  element={{
+                    lineColor: "border-lime-500",
+                    spaceX: 4,
+                    spaceY: 4,
+                    isChecked: checkedItems.includes(item),
+                    title: item,
+                    bg: "bg-lime-500",
+                    checkedIcon: <IoMdCheckmark />,
+                  }}
+                ></CheckBox>
+              ))}
             </div>
           </div>
-          <div className="className="my-12>
-            <textarea
-              placeholder="Your Message"
-              id="message"
-              rows="6"
-              class="text-md block w-full rounded border border-gray-300 bg-transparent px-8 py-3.5 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:text-white dark:placeholder-gray-400"
-            ></textarea>
+          <div className="my-12">
+            <TextArea
+              element={{
+                rows: 6,
+                id: "comment",
+                placeholder: "Your message",
+              }}
+            ></TextArea>
           </div>
           <div className="my-12">
-             <Button text="Send" />
+            <Button text="Send" />
           </div>
         </form>
       </div>
